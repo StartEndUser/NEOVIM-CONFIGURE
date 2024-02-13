@@ -1,0 +1,13 @@
+require("Core.Options")
+require("Core.Maps")
+
+require("Plugin.Plugin")
+require("Plugin.Theme")
+require("Plugin.Line")
+require("Plugin.Explorer")
+require("Plugin.Whitespace")
+require("Plugin.Highlight")
+require("Plugin.Find")
+require("Plugin.LSP")
+require("Plugin.Complete")
+require("Plugin.Org")
