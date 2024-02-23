@@ -1,5 +1,5 @@
 -- History
-vim.o.history = 0
+vim.o.shadafile = "NONE"
 
 -- Line
 vim.o.number = true

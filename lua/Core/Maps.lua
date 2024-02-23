@@ -46,11 +46,11 @@ vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
 
 vim.keymap.set("n", "<leader>c", ":cd ~/.config/nvim<CR>")
 
-vim.keymap.set('n', '<leader>nu', function()
+vim.keymap.set('n', "<leader>nu", function()
 vim.o.relativenumber = not vim.o.relativenumber
 end)
 
-vim.keymap.set('n', '<leader>wr', function()
+vim.keymap.set('n', "<leader>wr", function()
 vim.o.wrap = not vim.o.wrap
 end)
 
@@ -77,18 +77,15 @@ keyboardToNumber = not keyboardToNumber
 end, { expr = true })
 
 -- Visual
-vim.keymap.set("v", "L", ":m '<-2<CR>gv=gv")
-vim.keymap.set("v", "K", ":m '>+1<CR>gv=gv")
-
 vim.keymap.set("v", "A", function () return calculate3(keyboardToNumber, "1", "A") end, { expr = true })
 vim.keymap.set("v", "S", function () return calculate3(keyboardToNumber, "2", "S") end, { expr = true })
 vim.keymap.set("v", "D", function () return calculate3(keyboardToNumber, "3", "D") end, { expr = true })
 vim.keymap.set("v", "F", function () return calculate3(keyboardToNumber, "4", "F") end, { expr = true })
 vim.keymap.set("v", "G", function () return calculate3(keyboardToNumber, "5", "G") end, { expr = true })
 vim.keymap.set("v", "J", function () return calculate3(keyboardToNumber, "6", "J") end, { expr = true })
-vim.keymap.set("v", "K", function () return calculate3(keyboardToNumber, "7", "K") end, { expr = true })
-vim.keymap.set("v", "L", function () return calculate3(keyboardToNumber, "8", "L") end, { expr = true })
-vim.keymap.set("v", ";", function () return calculate3(keyboardToNumber, "9", "l") end, { expr = true })
+vim.keymap.set("v", "K", function () return calculate3(keyboardToNumber, "7", ":m '>+1<CR>gv=gv") end, { expr = true })
+vim.keymap.set("v", "L", function () return calculate3(keyboardToNumber, "8", ":m '<-2<CR>gv=gv") end, { expr = true })
+vim.keymap.set("v", ";", function () return calculate3(keyboardToNumber, "9", ";") end, { expr = true })
 vim.keymap.set("v", "'", function () return calculate3(keyboardToNumber, "0", "'") end, { expr = true })
 vim.keymap.set("v", "j", "h")
 vim.keymap.set("v", "k", "j")

@@ -1,5 +1,5 @@
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = {"bash", "c", "c_sharp", "cpp", "gdscript", "gitignore", "godot_resource", "lua", "make", "nasm", "ninja", "python", "rust",
+  ensure_installed = {"bash", "c", "c_sharp", "css", "cpp", "gdscript", "gitignore", "godot_resource", "html", "lua", "make", "nasm", "ninja", "python", "rust",
                       "comment", "doxygen"},
 
   highlight = {enable = true},
