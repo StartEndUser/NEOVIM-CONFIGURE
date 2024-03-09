@@ -85,7 +85,7 @@ vim.keymap.set("v", "G", function () return calculate3(keyboardToNumber, "5", "G
 vim.keymap.set("v", "J", function () return calculate3(keyboardToNumber, "6", "J") end, { expr = true })
 vim.keymap.set("v", "K", function () return calculate3(keyboardToNumber, "7", ":m '>+1<CR>gv=gv") end, { expr = true })
 vim.keymap.set("v", "L", function () return calculate3(keyboardToNumber, "8", ":m '<-2<CR>gv=gv") end, { expr = true })
-vim.keymap.set("v", ";", function () return calculate3(keyboardToNumber, "9", ";") end, { expr = true })
+vim.keymap.set("v", ";", function () return calculate3(keyboardToNumber, "9", "l") end, { expr = true })
 vim.keymap.set("v", "'", function () return calculate3(keyboardToNumber, "0", "'") end, { expr = true })
 vim.keymap.set("v", "j", "h")
 vim.keymap.set("v", "k", "j")
