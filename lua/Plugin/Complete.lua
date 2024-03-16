@@ -11,16 +11,12 @@ keyset("i", "<S-TAB>", [[coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"]], opts)
 
 keyset("i", "<cr>", [[coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"]], opts)
 
-keyset("i", "<c-j>", "<Plug>(coc-snippets-expand-jump)")
-keyset("i", "<c-space>", "coc#refresh()", {silent = true, expr = true})
-
 keyset("n", "<leader>dp", "<Plug>(coc-diagnostic-prev)", {silent = true})
 keyset("n", "<leader>dn", "<Plug>(coc-diagnostic-next)", {silent = true})
 
 keyset("n", "<leader>df", "<Plug>(coc-definition)", {silent = true})
 keyset("n", "<leader>dt", "<Plug>(coc-type-definition)", {silent = true})
 keyset("n", "<leader>di", "<Plug>(coc-implementation)", {silent = true})
-keyset("n", "<leader>dr", "<Plug>(coc-references)", {silent = true})
 
 function _G.showDocs()
     local cw = vim.fn.expand('<cword>')
@@ -67,11 +63,5 @@ keyset("i", "<leader>sb",
 keyset("v", "<leader>sf", 'coc#float#has_scroll() ? coc#float#scroll(1) : "<C-f>"', opts)
 keyset("v", "<leader>sb", 'coc#float#has_scroll() ? coc#float#scroll(0) : "<C-b>"', opts)
 
-keyset("n", "<leader>ss", "<Plug>(coc-range-select)", {silent = true})
-keyset("x", "<leader>ss", "<Plug>(coc-range-select)", {silent = true})
-
-vim.api.nvim_create_user_command("Fold", "call CocAction('fold', <f-args>)", {nargs = '?'})
-
-vim.api.nvim_create_user_command("OR", "call CocActionAsync('runCommand', 'editor.action.organizeImport')", {})
 
 vim.opt.statusline:prepend("%{coc#status()}%{get(b:,'coc_current_function','')}")
