@@ -4,6 +4,7 @@ vim.o.shadafile = "NONE"
 -- Line
 vim.o.number = true
 vim.o.relativenumber = true
+vim.o.signcolumn = "yes"
 vim.o.cursorline = true
 
 -- Indent
@@ -32,3 +33,10 @@ vim.o.smartcase = true
 -- Appearance
 vim.o.termguicolors = true
 vim.o.signcolumn = "yes"
+
+-- File
+vim.o.backup = false
+vim.o.writebackup = false
+
+-- Update Time
+vim.o.updatetime = 300

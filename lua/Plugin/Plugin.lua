@@ -54,12 +54,6 @@ require("lazy").setup({
   config = true
 },
 {
-  -- Autopairs
-  "windwp/nvim-autopairs",
-  event = "InsertEnter",
-  config = true
-},
-{
   -- Find
   "nvim-telescope/telescope.nvim",
   tag = "0.1.3",
@@ -67,21 +61,9 @@ require("lazy").setup({
   config = true
 },
 {
-  -- LSP
-  "williamboman/mason.nvim",
-  lazy = false,
-  dependencies = {"williamboman/mason-lspconfig.nvim", "neovim/nvim-lspconfig"}
-},
-{
   -- Complete
-  "hrsh7th/nvim-cmp",
-  lazy = false,
-  dependencies = {"hrsh7th/cmp-nvim-lsp", "saadparwaiz1/cmp_luasnip", "hrsh7th/cmp-path"}
-},
-{
-  -- Snippet
-  "L3MON4D3/LuaSnip",
-  version = "v2.*"
+  "neoclide/coc.nvim",
+  branch = "release"
 },
 {
   -- Org Mode
