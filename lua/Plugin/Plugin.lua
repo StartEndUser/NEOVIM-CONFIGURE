@@ -12,12 +12,40 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+local today_text = {"Hey!", "Hello!", "Time To Code!",
+                    "你好!", "啊?",
+                    "Привет!"}
+math.randomseed(os.time())
+local today_text_index = math.random(#today_text)
+
 -- Plugin List
 require("lazy").setup({
 {
   -- Theme
   "ellisonleao/gruvbox.nvim",
   priority = 1000
+},
+{
+  -- Dashboard
+  "nvimdev/dashboard-nvim",
+  event = "VimEnter",
+  config = function()
+    require("dashboard").setup
+    {
+        theme = "doom",
+        config = {
+            week_header = {
+                enable = true
+            },
+        center = {
+              {
+                desc = today_text[today_text_index],
+              }
+            },
+                  }
+            }
+      end,
+      dependencies = {"nvim-tree/nvim-web-devicons"}
 },
 {
   -- Status
@@ -67,28 +95,28 @@ require("lazy").setup({
 },
 {
   -- Org Mode
-  'nvim-orgmode/orgmode',
+  "nvim-orgmode/orgmode",
   dependencies = {
-    { 'nvim-treesitter/nvim-treesitter', lazy = true },
+    { "nvim-treesitter/nvim-treesitter", lazy = true },
   },
-  event = 'VeryLazy',
+  event = "VeryLazy",
   config = function()
     -- Load treesitter grammar for org
-    require('orgmode').setup_ts_grammar()
+    require("orgmode").setup_ts_grammar()
 
     -- Setup treesitter
-    require('nvim-treesitter.configs').setup({
+    require("nvim-treesitter.configs").setup({
       highlight = {
         enable = true,
-        additional_vim_regex_highlighting = { 'org' },
+        additional_vim_regex_highlighting = { "org" },
       },
-      ensure_installed = { 'org' },
+      ensure_installed = { "org" },
     })
 
     -- Setup orgmode
-    require('orgmode').setup({
-      org_agenda_files = '~/Org/**/*',
-      org_default_notes_file = '~/Org/Notes.org',
+    require("orgmode").setup({
+      org_agenda_files = "~/Org/**/*",
+      org_default_notes_file = "~/Org/Notes.org",
     })
   end,
 }
